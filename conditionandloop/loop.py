@@ -69,7 +69,6 @@
 # print(list(range(4,90,4)))
 
 
-
 # singer = ['ebi','mahasti', 'vigen', 'daryoush']
 # for i in range(len(singer)):
 #     print(f'sadaye {singer[i]} zibast.')
@@ -138,6 +137,9 @@
 # for index,element in x:
 #     print(index,element)
     
+#==============================================
+
+# jadval zarb
 
 # with while      
 # i = 0
@@ -170,17 +172,38 @@
     
     
 #============================
-from random import randint
-LOW = 1
-HIGH =100
-num = randint(LOW,HIGH+1)
-while True:
-    myGuess = int(input('Please enter a number: '))
-    if myGuess == num:
-        print(f'You found it. your number was {num}')
-        break
-    elif(myGuess > num):
-        print('Please enter a smaller number')
-    else:
-        print('Please enter a bigger number')
+# from random import randint
+# LOW = 1
+# HIGH =100
+# num = randint(LOW,HIGH+1)
+# while True:
+#     myGuess = int(input('Please enter a number: '))
+#     if myGuess == num:
+#         print(f'You found it. your number was {num}')
+#         break
+#     elif(myGuess > num):
+#         print('Please enter a smaller number')
+#     else:
+#         print('Please enter a bigger number')
+        
+#========================================
+
+a = 0
+n = 5
+nums= []
+x = None
+
+while(a < n):
+    a += 1
+    x = int(input(f'Please Enter your number {a}: '))
+    nums.append(x)
+    
+print(max(nums))
+# print(max.__doc__)
+
+
+#=====================================================================
+
+
+
     
