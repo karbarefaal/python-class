@@ -52,9 +52,9 @@
 
 #================================================
 
-# 1 - required parameter
+# 1 - required argument
 # 2 - default parameter
-# 3 - keyword parameter
+# 3 - keyword argument
 # 4 - multiple parameter (as you wish)
 
 # 1 - required parameter (required arg)
@@ -220,7 +220,7 @@
 
 # def incr(x , /):
 #     return x + 1
-# print(incr(10))  
+# print(incr(x = 10))  # incorrect
 
 #==============================
 
@@ -235,7 +235,7 @@
 # def to_fahrenheit(* , celsius):
 #     return 32 + celsius * 9 / 5
 
-# print(to_fahrenheit(celsius=30))
+# print(to_fahrenheit(celsius=30))  # is essential
 
 #============================================
 
@@ -246,32 +246,154 @@
 
 #===========================================
 
-def my_func(a: int) -> int:
-    return a
+# def my_func(a: int) -> int:
+#     return a + 10
 
-my_func(True)
-my_func(3.14)
-my_func('salam')
+# my_func(True)
+# my_func(3.14)
 
-name:str = "ali"
+# name: str = "ali"
 
-#===========================================
+#========================================
+
+# def square(base):
+#     result = base ** 2
+#     return result
+
+# print(square(10))
+# print(square(20))
+# print(result) # -> Is not defined
+
+#======================================
+
+# # nested functions
+
+# def outer_func():
+#     var = 100
+#     def inner_func():
+#         # var += 100    #   -> UnboundLocalError
+#         print(f'Printing {var} from inner func')
+#     inner_func()
+#     print(f'Printing {var} from inner func')
+    
+# outer_func()
+
+#=========================================
+# if __name__ == "__main__":    # hidden
+#     print(10)
+
+# print(__name__)
+
+#========================================
+
+# var = 100
+# def func(var):
+#     var += 1
+#     return var
+# print(func(var))
+# print(var)
+
+#=============================
+
+# b= 10
+# print('b global id is ',id(b))
+# def f():
+#     b = 20
+#     print('f b local id is ',id(b))
+#     print(b)
+   
+# def f2():
+#     b = 30
+#     print('f2 b local id is ',id(b))
+#     print(b)
+    
+# f()
+# f2()
+# print(b)
+
+#=========================================
+
+# counter = 0
+# def update_counter():
+#     global counter
+#     counter += 1
+#     print(counter)
+    
+# prefered way
+# def update_counter(counter):
+#     counter += 1
+#     print(counter)
+
+# update_counter(counter)
+
+#=========================================
+
+#   NonLocal
+# def outer_func():
+#     var = 100
+#     def inner_func():
+#         nonlocal var
+#         var += 100    #   -> UnboundLocalError
+#         print(f'Printing {var} from inner func')
+#     inner_func()
+#     print(f'Printing {var} from inner func')
+    
+# outer_func()
+
+#===============================================
+
+# def count_down(n):
+#     print(n)
+#     if n == 0:
+#         return
+#     else:
+#         count_down(n-1)
+# count_down(10)
+# print("Done!")
 
 
+# def count_down(n):
+#     while n > 0:
+#         print(n)
+#         n -= 1
+# count_down(8)
+        
+
+#================================
+
+#   5! = 5*4*3*2*1
+# def calc_factorial(x):
+#     result = 1
+#     for i in range(1,x+1):
+#         result *= i
+#     return result
+
+# print(calc_factorial(6))
+
+#===========Do factorial with recursive function
+
+#===============================================
+
+# lambda function
+# double = lambda x: x * 2
+# print(double(10))
+
+#=======================================
+# map & filter
+
+# my_list = [1,3,4,7,9,10,11,40]
+# new_list = list(filter(lambda x: (x % 2 == 0), my_list))
+# print(new_list)
+
+#======================================
+# def addt(x,y):
+#     return x+y
+# print(addt(10,20))
 
 
+# addt = lambda x,y: x+y
+# print(addt(55,44))
 
-
-
-
-
-
-
-
-
-
-
-
-
+#=======================================
 
 
