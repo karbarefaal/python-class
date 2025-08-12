@@ -36,27 +36,30 @@ def play_ground():
 
 play_ground()
 
-while True:
-    moved = False
-    if keyboard.is_pressed('left'):
-        if cursor_x > 0:
-            cursor_x -= 1
-            moved = True
-    elif keyboard.is_pressed('right'):
-        if cursor_x < len_ground - 1:
-            cursor_x += 1
-            moved = True
-    elif keyboard.is_pressed('up'):
-        if cursor_y > 0:
-            cursor_y -= 1
-            moved = True
-    elif keyboard.is_pressed('down'):
-        if cursor_y < len_ground - 1:
-            cursor_y += 1
-            moved = True
-    if moved:
-        play_ground()
-        time.sleep(0.3)  # debounce
+def my_game():
+    while True:
+        moved = False
+        if keyboard.is_pressed('left'):
+            if cursor_x > 0:
+                cursor_x -= 1
+                moved = True
+        elif keyboard.is_pressed('right'):
+            if cursor_x < len_ground - 1:
+                cursor_x += 1
+                moved = True
+        elif keyboard.is_pressed('up'):
+            if cursor_y > 0:
+                cursor_y -= 1
+                moved = True
+        elif keyboard.is_pressed('down'):
+            if cursor_y < len_ground - 1:
+                cursor_y += 1
+                moved = True
+        if moved:
+            play_ground()
+            time.sleep(0.3)  # debounce
+            
+my_game()
 
 
 
