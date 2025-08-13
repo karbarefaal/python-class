@@ -23,8 +23,10 @@ def play_ground():
         print('|',end=' ')
         for j in range(len_ground):
             if i == cursor_y and j == cursor_x:
-                ground[i][j] = '?'
-                print(ground[i][j],'|',end= ' ')
+                if ground[i][j] != 'X' or ground[i][j] != 'O':
+                    ground[i][j] = '?'
+                    print(ground[i][j],'|',end= ' ')
+
             else:
                 ground[i][j] = ' '
                 print(ground[i][j],end=' ')
@@ -37,33 +39,34 @@ def play_ground():
 play_ground()
 
 while True:
-    moved = False
-    if keyboard.is_pressed('left'):
-        if cursor_x > 0:
+    event = keyboard.read_event()
+    if event.event_type == keyboard.KEY_DOWN:
+        moved = False
+        if event.name == 'left' and cursor_x > 0:
             cursor_x -= 1
             moved = True
-    elif keyboard.is_pressed('right'):
-        if cursor_x < len_ground - 1:
+        elif event.name == 'right' and cursor_x < len_ground - 1:
             cursor_x += 1
             moved = True
-    elif keyboard.is_pressed('up'):
-        if cursor_y > 0:
+        elif event.name == 'up' and cursor_y > 0:
             cursor_y -= 1
             moved = True
-    elif keyboard.is_pressed('down'):
-        if cursor_y < len_ground - 1:
+        elif event.name == 'down' and cursor_y < len_ground - 1:
             cursor_y += 1
             moved = True
-    if moved:
-        play_ground()
-        time.sleep(0.3)  # debounce
+        elif event.name == 'x' and ground[cursor_y][cursor_x] == '?':
+            ground[cursor_y][cursor_x] = 'X'
+            print(ground[cursor_y][cursor_x])
+            moved = True
+        elif event.name == 'o' and ground[cursor_y][cursor_x] == '?':
+            ground[cursor_y][cursor_x] = 'O'
+            play_ground()
+        elif event.name == 'esc':
+            print('Done!')
+            break
 
-
-
-
-
-    # if event.event_type == keyboard.KEY_DOWN:
-    #     if event.name == 'esc':
-    #         print('Done!')
-    #         exit()
-
+        if moved:
+            
+            play_ground()
+            time.sleep(0.1)
+            
