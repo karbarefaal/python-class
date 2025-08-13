@@ -38,6 +38,7 @@ def play_ground():
 
 play_ground()
 
+<<<<<<< HEAD
 while True:
     event = keyboard.read_event()
     if event.event_type == keyboard.KEY_DOWN:
@@ -64,6 +65,41 @@ while True:
         elif event.name == 'esc':
             print('Done!')
             break
+=======
+def my_game():
+    while True:
+        moved = False
+        if keyboard.is_pressed('left'):
+            if cursor_x > 0:
+                cursor_x -= 1
+                moved = True
+        elif keyboard.is_pressed('right'):
+            if cursor_x < len_ground - 1:
+                cursor_x += 1
+                moved = True
+        elif keyboard.is_pressed('up'):
+            if cursor_y > 0:
+                cursor_y -= 1
+                moved = True
+        elif keyboard.is_pressed('down'):
+            if cursor_y < len_ground - 1:
+                cursor_y += 1
+                moved = True
+        if moved:
+            play_ground()
+            time.sleep(0.3)  # debounce
+            
+my_game()
+
+
+
+
+
+    # if event.event_type == keyboard.KEY_DOWN:
+    #     if event.name == 'esc':
+    #         print('Done!')
+    #         exit()
+>>>>>>> f0e580650a043662358422b3872d9a5f0af8dc0e
 
         if moved:
             
