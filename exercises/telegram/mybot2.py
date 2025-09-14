@@ -161,6 +161,7 @@ async def unban_member(update:Update, context:ContextTypes.DEFAULT_TYPE):
 async def mute(update:Update, context:ContextTypes.DEFAULT_TYPE):
     user_to_mute = update.message.reply_to_message.from_user.id
     chat_id = update.message.chat.id
+    full_name = update.message.reply_to_message.from_user.full_name
     permissions = ChatPermissions(can_send_messages=False)
     await context.bot.restrict_chat_member(
         chat_id = chat_id,
@@ -168,7 +169,7 @@ async def mute(update:Update, context:ContextTypes.DEFAULT_TYPE):
         permissions= permissions
     )
     await update.message.reply_text(
-        "User has been muted."
+        f"{full_name} has been muted."
     )
 
 #========================================================
@@ -176,6 +177,7 @@ async def mute(update:Update, context:ContextTypes.DEFAULT_TYPE):
 async def unmute(update:Update, context:ContextTypes.DEFAULT_TYPE):
     user_to_unmute = update.message.reply_to_message.from_user.id
     chat_id = update.message.chat.id
+    full_name = update.message.reply_to_message.from_user.full_name
     permissions = ChatPermissions(can_send_messages=True)
     await context.bot.restrict_chat_member(
         chat_id = chat_id,
@@ -183,7 +185,7 @@ async def unmute(update:Update, context:ContextTypes.DEFAULT_TYPE):
         permissions= permissions
     )
     await update.message.reply_text(
-        "User has been unmuted."
+        f"{full_name} has been unmuted."
     )
 #========================================================
 
@@ -223,7 +225,7 @@ async def button(update:Update, context:CallbackContext):
     else:
         reply_markup = InlineKeyboardMarkup(keyboard_back)
         await query.edit_message_text(
-            text= f"selected option: {option}",
+            text= f"selected option {option}: You need a lot of experience in each one",
             reply_markup= reply_markup
         )
 #========================================================
@@ -249,11 +251,11 @@ if __name__ == "__main__":
     help_handler = CommandHandler('help',help)
     app.add_handler(help_handler)
     
-    echo_handler = MessageHandler(
-        filters.TEXT & ~filters.COMMAND,
-        echo
-        )
-    app.add_handler(echo_handler)
+    # echo_handler = MessageHandler(
+    #     filters.TEXT & ~filters.COMMAND,
+    #     echo
+    #     )
+    # app.add_handler(echo_handler)
     
     welcome_handler = MessageHandler(
         filters.StatusUpdate.NEW_CHAT_MEMBERS,
