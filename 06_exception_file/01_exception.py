@@ -1,3 +1,52 @@
+
+
+
+# ===========================second session=================================
+try:
+    print(2/ 0)
+except ZeroDivisionError:
+    print('you can\'t')
+except:
+    print('hi there')
+else:
+    print('else')
+finally:
+    print('finally')
+
+#==========================exercise===========================================
+
+def valueChecker(age):
+    if age >= 18:
+        print("dige got shodi.")
+    elif (age >= 0): 
+        print("sen shoma kafi nemibashad.")
+
+def negativeChecker(value):
+    if value < 0:
+        return True
+
+def getNumber():
+    while(True):
+        age = input('lotfan sen khod ra vared konid: ')
+
+        try:
+            age = int(age)
+        except ValueError:
+            print('please enter a number.')
+            continue
+        if negativeChecker(age):
+            print('please do not enter a neg num.')
+        valueChecker(age)
+        if(age == 1000):
+            print("Done!")
+            break
+
+
+if __name__ == "__main__":
+    getNumber()
+
+#========================first session========================================
+
 try:
     # کدی که احتمال خطا دارد
     x = int("hello")  # اینجا خطا رخ میده
