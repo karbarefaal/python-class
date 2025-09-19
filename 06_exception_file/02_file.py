@@ -1,3 +1,45 @@
+#==============================second session============================
+
+
+# a append      w write         r read      x create
+# t text        b binary
+# f = open("D:\\ourFile.txt","a") 
+# f.write("Salam Kasra jan. khubi?")
+# f.close()
+
+#========================== write file =====================
+
+with open("myFolder\\myFile.txt", "a") as f:
+    f.write("Hi there. Welcome to python class 200.\n")
+
+#=============================read file=================================
+
+with open("myFolder\\myFile.txt", "r") as f:
+    print(f.read())
+
+#=========================to create a file= via x mode==================
+
+try:
+    if not os.path.exists("data.txt"):
+        open("data.txt", "x")
+except FileNotFoundError:
+    print("Please create a file as data.txt")
+
+#================================os mudule===============================
+
+import os
+
+# rename remove using os module
+if os.path.exists("myFolder\\myFile.txt"):
+    os.remove("myFolder\\kasraFile.txt")
+
+# os.rename()
+
+#  create and remove folder
+# os.mkdir("toDelete")
+# os.rmdir("toDelete")
+#==============================first session============================
+
 f = open("myName.txt","w")
 f.write("Salam man yechizi neveshtam")
 f.close()
