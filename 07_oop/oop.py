@@ -1,3 +1,32 @@
+#============================second session================================
+
+class MyNewClass():
+    """
+    This is a Docstring for MyNewClass
+    """
+    def __init__(self,name,family):
+        self.name = name
+        self.family = family
+
+    def say_hello(self):
+        print(f"hello {self.name} {self.family}")
+
+a = MyNewClass("ali", "sajjadi")
+print(a.__doc__)
+print(a.name, a.family)
+
+
+b = MyNewClass("kasra", "daneshvar")
+print(b.name, b.family)
+
+print(f"id a is {id(a)}")
+print(f"id b is {id(b)}")
+
+
+# 4 principles of oop languages are encapsulation,inhertence,abstraction,polymorphism
+
+
+
 #========================================first session ============================================================
 
 # global variable

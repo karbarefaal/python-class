@@ -1,3 +1,29 @@
+#========================third session========================================
+
+# x => just create,r => read ,w => overwrite ,a => append  /   t= text,b=binary
+
+# open("./myFolder/mehdi.txt", "x")
+
+# with open("./myFolder/mehdi.txt") as f:     # r
+#     print(f.read())
+
+# with open("./myFolder/mehdi.txt", "w") as f:
+#     f.write("salam man mehdi ghasemi hastam.")
+
+# with open("./myFolder/mehdi.txt", "a") as f:
+#     f.write("\nsalam man mehdi ghasemi hastam.")
+
+import os
+# os.mkdir("./mehdiFolder/hi")        # mkdir
+# os.rmdir("./mehdiFolder/hi")
+# os.rename("mehdiFolder/helloFolder", "mehdiFolder/hi")
+
+
+if os.path.exists("mehdiFolder/hi"):
+    os.remove("myFolder\\kasraFile.txt")
+else:
+    print("nashod")
+
 #==============================second session============================
 
 
