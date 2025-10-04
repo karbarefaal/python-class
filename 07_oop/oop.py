@@ -1,3 +1,34 @@
+#===================Fourth session================================
+
+class Human:
+    """
+    This is Human class
+    """
+    num_of_obj = 0
+    def __init__(self,job,age,name,telephone):
+        self.job = job
+        self.age = age
+        self.name = name
+        self.tel = telephone
+        self.email = name+"@rahemehr.ir"
+        Human.num_of_obj += 1
+
+    def print_info(self):
+        print(f"Name: {self.name}, Age: {self.age}, Job: {self.job}")
+
+inputName = input("please enter your name: ")
+inputJob = input("Please enter your job: ")
+inputAge = int(input("please enter your age: "))
+inputPhone = input("please enter your phone: ")
+h1 = Human(inputJob, inputAge, inputName,inputPhone)
+print(f"Dear {h1.name}. we sent a SMS on your phone.")
+print(h1.name)
+print(h1.email)
+print(Human.num_of_obj)
+h2 = Human("a",22,"a","09")
+print(Human.num_of_obj)
+
+
 #===========================third session===================
 
 class Book:
@@ -115,3 +146,5 @@ print(kasra.age, mehdi.height, sara.gender,)
 
 mehdi.walk()
 kasra.eat()
+
+
