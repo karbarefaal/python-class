@@ -1,3 +1,57 @@
+#============================slots========================================
+
+class Student:
+    __slots__ =("name","age")
+    
+    def __init__(self,name,age):
+        self.name = name
+        self.age =age
+
+obj1 = Student("Kasra", 17)
+obj1.lastName = "Danshvar"
+print(obj1.lastName)
+print(obj1.__dict__) # show a obj as a dictionary
+    
+obj1.grade = 18
+print(obj1.grade)
+
+#========================================================================
+class BankAccount:
+    def __init__(self, b: float, owner: str):
+        self.balance = b
+        self.owner = owner
+
+    def open_account(name: str):
+        new_account = BankAccount(0,name)
+        return new_account
+    
+    def deposit_money_on_account(account,amount: int):
+        account.balance += amount
+
+    def info(self):
+        print(f"{self.owner} has {self.balance} dollar")
+
+saman_account = BankAccount.open_account("Leonardo Decaprio")
+mellat_account = BankAccount.open_account("Leonardo Decaprio")
+refah_account = BankAccount.open_account("Angelina Julie")
+BankAccount.deposit_money_on_account(saman_account,100)
+refah_account.info()
+
+#================================================================
+
+class Dog:
+    def __init__(self, name):
+        self.name = name
+        self.tricks = []
+    def add_trick(self,trick):
+        self.tricks.append(trick)
+dog1 = Dog("Fido")
+dog2 = Dog("Mika")
+dog1.add_trick("Roll over")
+dog2.add_trick("Play dead")
+print(dog1.tricks)
+print(dog2.tricks)
+
 #===================Fourth session================================
 
 class Human:

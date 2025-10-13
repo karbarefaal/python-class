@@ -1,8 +1,4 @@
-```
-    #this is our test
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
+# Tuple
+```python
+tup = (1,"hello",True,"salam",'reza','mahsa')
 ```
