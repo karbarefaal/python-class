@@ -110,7 +110,7 @@ obj = C()
 
 #==============================================================
 
-# Inheritence
+# Inheritance
 class Bird:     #Super class
     def __init__(self):
         print("Bird is Ready")

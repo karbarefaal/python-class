@@ -1,3 +1,38 @@
+#=================================================
+
+import csv
+
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+    header = next(reader)
+    print(header)
+    for row in reader:
+        print(row)
+
+#======================================================
+
+# import csv
+
+# name,age,city
+# Alice,30,New York
+# Bob,24,London
+
+# def read_csv_example(filename='data.csv'):
+#     print('----Reading CSV------')
+#     with open(filename, "r", newline='', encoding="utf-8") as file:
+#         reader = csv.reader(file)
+    
+#         # Read the header row separately
+#         header = next(reader)
+#         print(f"Header: {header}")
+
+#         # Read the rest of the rows
+#         for row in reader:
+#             print(f"Row: {row}")
+
+# read_csv_example()
+
+
 #=============================csv=================================
 
 import csv
@@ -20,10 +55,17 @@ with open("students.csv", "r", encoding="utf-8") as f:
 import xml.etree.ElementTree as ET
 
 # ایجاد XML
+import xml.etree.ElementTree as ET
+
+# ایجاد XML
 root = ET.Element("students")
 student = ET.SubElement(root, "student")
-ET.SubElement(student, "name").text = "Ali"
-ET.SubElement(student, "score").text = "18"
+name = ET.SubElement(student, "name")
+name.text = "Ali"
+name.attrib = {"id": "123"}
+score = ET.SubElement(student,"score")
+score.text = "20"
+score.attrib = {"id": "A"}
 
 tree = ET.ElementTree(root)
 tree.write("students.xml", encoding="utf-8")
@@ -41,7 +83,7 @@ import json
 data = {
     "name": "Ali",
     "age": 21,
-    "grades": [18, 19, 20]
+    "grades": {"Riazi": 20, "Shimi": 18}
 }
 
 # ذخیره در فایل JSON

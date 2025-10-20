@@ -1,12 +1,21 @@
-# list reminder
+tup = ("ali", "saeed", "kasra", "mehdi")
+# immutable
+tup.count()
+tup.index()
+sorted(tup)
+reversed(tup)
+
+
+
+#===========================================================
+
+# review list comprehension
 
 # l = [i ** 2 for i in range(1,11)]
 # print(l)
 
-#========================================================
+#===================Tuple========================
 
-
-# tuple
 # tup = (1,"hello",True,"salam",'reza','mahsa')
 # print(type(tup))
 # print(tup[1])
@@ -14,6 +23,8 @@
 # tup2 =  1, "hi",True
 
 # # print(type(tup2))
+
+#============unpacking tuple============================
 
 # a,*_,c = tup
 # a = tup[0]
@@ -24,6 +35,8 @@
 # tup[1] = 'bye'
 # print(tup)
 
+#=================variety of costum strings=======================
+
 # print(f'a is {a} and b is {b} and c is {c}')
 # print('a is %i and b is %s and c is %s' % (a,b,c))
 # res = 'a is {} and b is {}  and c is {}'.format(a,b,c)
@@ -31,7 +44,7 @@
 
 # print(len(tup))
 
-#===========================
+#=============================================================
 
 # names = ('ali','mehdi','kasra','ali')
 # contact_ways = ('ali@gmail.com',[1,2,3],'kasra@gmail.com')
@@ -109,19 +122,12 @@ print(len(a))
 # ali = person('ali','sajjadi')
 # print(ali.name)
 
-
-
-
-
-
 #==========================not important======================
 class Person :
     
-    
     def __init__(self, name, family):
             self.name = name
-            self.family = family
-            
+            self.family = family  
             
     def myFunc(self):
         print('Done!')

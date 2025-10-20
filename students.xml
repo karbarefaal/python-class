@@ -1,0 +1,10 @@
+<students>
+    <student>
+        <name id="123">Ali</name>
+        <score id="A">20</score>
+
+        <name id="124">Mamad</name>
+        <score id="B">18</score>
+
+    </student>
+</students>

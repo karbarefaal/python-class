@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Ali",
+        "age": 18,
+        "grades": {
+            "Riazi": 20,
+            "Shimi": 18
+        }
+    },
+    {
+        "name": "Kasra",
+        "age": 22,
+        "grades": {
+            "Riazi": 22,
+            "Shimi": 15
+        }
+    },
+    {
+        "name": "Mehdi",
+        "age": 20,
+        "grades": {
+            "Riazi": 24,
+            "Shimi": 80
+        }
+    }
+]

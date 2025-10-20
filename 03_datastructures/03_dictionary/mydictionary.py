@@ -1,3 +1,21 @@
+my_dict = {}
+print(type(my_dict))
+
+my_dict.clear()
+my_dict.copy()
+my_dict.get()
+my_dict.items()
+my_dict.keys()
+my_dict.values()
+my_dict.fromkeys()
+my_dict.pop()
+my_dict.popitem()
+my_dict.update()
+my_dict.setdefault()
+
+
+#==================================================================
+
 # my_dict = {}
 # print(type(my_dict)) -> dict
 
@@ -151,6 +169,26 @@ a = UserDict(d)
 print(a)
 
 
+#==================================================================
+
+from collections import UserDict
+class MyCustomDict(UserDict):
+    def __setitem__(self, key, value):
+        print(f"Setting key '{key}' to value '{value}'")
+        super().__setitem__(key, value)
+
+    def __getitem__(self, key):
+        print(f"Accessing key '{key}'")
+        return super().__getitem__(key)
+    
+    def sayHello(self):
+        return "salam salam"
+
+# Create an instance of the custom dictionary
+d = MyCustomDict()
+d['name'] = 'Alice'  # Output: Setting key 'name' to value 'Alice'
+print(d['name'])     # Output: Accessing key 'name' \n Alice
+print(d.sayHello)
 
 
  
