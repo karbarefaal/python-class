@@ -1,3 +1,28 @@
+class Employee:
+    def __init__(self, name, salary = 1000):
+        self.name = name
+        self.salary = salary
+    def get_paid():
+        return self.salary
+
+class Manager(Employee):
+    def __init__(self,name, salary = 800):
+        salary += super().salary
+        super().__init__(name, salary)
+        
+class Intern(Employee):
+    def __init__(self,name, salary):
+        salary -= 500
+        super().__init__(name,salary)
+
+em = Employee("ali")
+print(em.get_paid())
+
+man = Manager("kasra")
+print(man.get_paid())
+
+inte = Intern("hasan")
+
 #======================== first session from below to up===============
 
 class A:

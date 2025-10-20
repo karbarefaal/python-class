@@ -1,3 +1,23 @@
+# seek() and tell()
+
+with open('example.txt', 'r') as f:
+    print("Initial position:", f.tell())  # Usually 0 at the start
+
+    # Read 10 characters
+    chunk = f.read(10)
+    print("After reading 10 chars:", f.tell())  # Position moves forward
+
+    # Move back to the start of the file
+    f.seek(0)
+    print("Position after seek(0):", f.tell())
+
+    # Move to 5 bytes from current position (which is now 0)
+    f.seek(5, 0)
+    print("Position after seek(5,0):", f.tell())
+
+    # Read from this new position
+    print("Read from position 5:", f.read(10))
+
 #========================third session========================================
 
 # x => just create,r => read ,w => overwrite ,a => append  /   t= text,b=binary
